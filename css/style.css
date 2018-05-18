@@ -1,0 +1,645 @@
+body {
+  background: #fff;
+  font-family: "microsoft yahei", sans-serif;
+}
+body a {
+  transition: 0.5s all;
+  -webkit-transition: 0.5s all;
+  -o-transition: 0.5s all;
+  -moz-transition: 0.5s all;
+  -ms-transition: 0.5s all;
+}
+ul {
+  padding: 0;
+  margin: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+label,
+p {
+  margin: 0;
+}
+.logo {
+  float: left;
+}
+.logo h1 {
+  font-family: "Raleway", sans-serif;
+  font-size: 4em;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+.logo a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav-icon {
+  float: right;
+  margin-top: 1.5em;
+}
+i.glyphicon.glyphicon-menu-hamburger {
+  color: #fff;
+  font-size: 2em;
+}
+
+.navicon {
+  background: transparent;
+  position: relative;
+  height: 30px;
+  display: inline-block;
+  z-index: 99;
+  -webkit-transition: linear 0.5s all;
+  transition: linear 0.5s all;
+  width: 50px;
+}
+
+.navicon:before,
+.navicon:after {
+  background: #fff;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  content: "";
+  height: 2px;
+  left: 0;
+  -webkit-transition: 0.8s ease;
+  transition: 0.8s ease;
+  width: 35px;
+}
+
+.navicon:before {
+  box-shadow: #fff 0 9px 0 0;
+  position: absolute;
+  top: 0;
+}
+
+.navicon:after {
+  position: absolute;
+  top: 18px;
+}
+
+.navicon--active {
+  -webkit-transition: linear 0.5s all;
+  transition: linear 0.5s all;
+}
+
+.navicon--active:before {
+  box-shadow: transparent 0 0 0 0;
+  top: 15px;
+  -webkit-transform: rotate(225deg);
+  -ms-transform: rotate(225deg);
+  transform: rotate(225deg);
+}
+
+.navicon--active:after {
+  top: 15px;
+  -webkit-transform: rotate(315deg);
+  -ms-transform: rotate(315deg);
+  transform: rotate(315deg);
+}
+
+.toggle {
+  display: block;
+  margin: 20px auto;
+  width: 30%;
+  background-color: #222;
+  padding: 15px;
+  display: block;
+  opacity: 0;
+  -webkit-transition: ease-in 0.5s all;
+  transition: ease-in 0.5s all;
+  -webkit-transform: translateY(-200%);
+  -ms-transform: translateY(-200%);
+  transform: translateY(-200%);
+  position: absolute;
+  left: 35%;
+}
+
+.toggle--active {
+  display: block;
+  opacity: 1;
+  -webkit-transition: ease-in 0.5s all;
+  transition: ease-in 0.5s all;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+  z-index: 999;
+}
+
+.toggle-menu li {
+  width: 25%;
+  display: block;
+  margin: 10px auto;
+}
+
+.toggle-menu li a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  text-align: center;
+  font-size: 17px;
+  text-transform: uppercase;
+  border-bottom: 2px solid transparent;
+  -webkit-transition: linear 0.5s all;
+  transition: linear 0.5s all;
+  font-weight: 500;
+  padding: 5px 0;
+}
+
+.toggle-menu li a span {
+  text-transform: lowercase;
+}
+
+.toggle-menu li a:hover,
+.toggle-menu li a.active {
+  color: #df0f2f;
+  border-bottom: 2px solid #df0f2f;
+  -webkit-transition: linear 0.5s all;
+  transition: linear 0.5s all;
+  -webkit-transform: scale(1.15);
+  -ms-transform: scale(1.15);
+  transform: scale(1.15);
+  font-weight: 700;
+}
+@media (max-width: 991px) {
+  .toggle {
+    width: 50%;
+    left: 25%;
+  }
+}
+@media (max-width: 414px) {
+  .navicon {
+    width: 35px;
+  }
+  .toggle {
+    width: 70%;
+    left: 15%;
+    padding: 10px;
+  }
+  .toggle-menu li a {
+    font-size: 15px;
+  }
+}
+
+.text-danger {
+  color: #df0f2f;
+}
+/*--banner--*/
+.header {
+  background: url(../images/2.jpg) no-repeat left;
+  width: 100%;
+  background-size: cover;
+  min-height: 750px;
+  display: block;
+  padding-top: 1em;
+}
+.head {
+  min-height: 89px;
+}
+/*--banner--*/
+.banner {
+  text-align: center;
+  margin-top: 10em;
+}
+.banner h4 {
+  color: #fff;
+  font-size: 3em;
+  border: 2px solid #fff;
+  padding: 1em;
+  width: 50%;
+  margin: 0 auto;
+  font-weight: 700;
+  font-family: "Raleway", sans-serif;
+}
+.banner p {
+  font-size: 1.2em;
+  color: #fff;
+  text-transform: uppercase;
+}
+.banner label {
+  width: 78px;
+  height: 2px;
+  background-color: #fff;
+  margin: 2em 0;
+}
+a.down {
+  margin-top: 6em;
+  display: block;
+  color: #fff;
+  font-size: 1.4em;
+  text-align: center
+}
+a.down:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+/*--menu--*/
+.menu-top {
+  padding: 0em 0 2em;
+}
+.menu-left h3 {
+  font-size: 3em;
+  color: #df0f2f;
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+}
+.menu-left span {
+  font-size: 2em;
+  color: #000;
+}
+.menu-right p {
+  font-size: 1.15em;
+  color: #777;
+  line-height: 2em;
+}
+.menu-left label {
+  display: block;
+  margin: 0.4em 0;
+}
+.menu-left label:before,
+.menu-left label:after {
+  width: 45px;
+  height: 2px;
+  display: inline-block;
+  vertical-align: middle;
+  content: "";
+  margin: 0 1%;
+  background-color: #97824b;
+}
+.menu-left i {
+  font-size: 1em;
+  color: #97824b;
+}
+.btm-right {
+  overflow: hidden;
+  position: relative;
+  display: block;
+}
+.btm-right img {
+  width: 100%;
+}
+.btm-right .captn {
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  bottom: -68%;
+  right: 0;
+  background-color: #97824b;
+  text-align: center;
+  -o-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.btm-right:hover .captn {
+  bottom: 0%;
+}
+
+.captn h4 {
+  font-size: 2.2em;
+  color: #fff;
+  padding: 0.6em 0 0.5em;
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+}
+.captn p {
+  margin-bottom: 0.3em;
+  font-size: 1.2em;
+  color: #fff;
+}
+.captn .form-control {
+  margin: 0 auto;
+  width: 50%;
+  text-align: center;
+}
+.btm-right:hover .captn h4 {
+  margin-top: 50px;
+}
+.menu-bottom {
+  margin-top: 2em;
+}
+.menu {
+  padding: 6em 0;
+}
+.captn:before {
+  content: "";
+  position: absolute;
+  top: -10%;
+  left: 41%;
+  margin-left: 0;
+  width: 0;
+  height: 0;
+  border-bottom: 32px solid #97824b;
+  border-right: 30px solid transparent;
+  border-left: 30px solid transparent;
+}
+
+/*--media-quires--*/
+@media (max-width: 1280px) {
+  .banner h4 {
+    width: 60%;
+  }
+}
+@media (max-width: 1080px) {
+  .banner h4 {
+    width: 75%;
+  }
+  ul.in li a {
+    padding: 0px 1em 0 0;
+  }
+  .footer-top span {
+    width: 85%;
+  }
+  .banner {
+    margin-top: 8em;
+  }
+  .header {
+    min-height: 700px;
+  }
+  .head {
+    min-height: 89px;
+  }
+  /*----*/
+  .captn h4 {
+    font-size: 2em;
+    padding: 0.5em 0 0em;
+  }
+  .captn p {
+    font-size: 1.7em;
+  }
+  .btm-right:hover .captn h4 {
+    margin-top: 85px;
+  }
+  /*----*/
+  .read-more {
+    padding-top: 0.7em;
+    margin-top: 0.4em;
+  }
+  .blog-grid h3 {
+    font-size: 1.1em;
+  }
+  .events-bottom2 {
+    padding: 1em;
+  }
+}
+@media (max-width: 991px) {
+  .banner h4 {
+    font-size: 2.5em;
+  }
+  .down {
+    margin-top: 2.5em;
+    padding-bottom: 1em;
+  }
+  .banner {
+    margin-top: 8em;
+  }
+  .header {
+    min-height: 595px;
+  }
+  .menu-top .menu-left {
+    margin: 0 auto;
+    text-align: center;
+  }
+  /*----*/
+
+  .menu {
+    padding: 4em 0;
+  }
+  .menu-bottom1 {
+    width: 33.3%;
+    float: left;
+    padding: 0 10px;
+  }
+  .captn h4 {
+    font-size: 2em;
+  }
+  .captn p {
+    font-size: 1em;
+    margin-bottom: 0.1em;
+  }
+  .btm-right .captn {
+    bottom: -65%;
+  }
+  .btm-right:hover .captn h4 {
+    margin-top: 0px;
+  }
+  .head {
+    min-height: 89px;
+  }
+
+  /*----*/
+  .contact {
+    padding: 4em 0;
+  }
+  .contact-grid {
+    padding: 0 0 1em;
+  }
+  .grid-contact {
+    padding: 0;
+  }
+}
+@media (max-width: 767px) {
+  .banner h4 {
+    font-size: 2em;
+  }
+  .banner {
+    margin-top: 4em;
+  }
+  .header {
+    min-height: 485px;
+    padding-top: 0.5em;
+  }
+
+  .captn:before {
+    top: -17%;
+    left: 35%;
+  }
+  .btm-right .captn {
+    bottom: -60%;
+  }
+
+  .captn p {
+    font-size: 1.2em;
+  }
+  .menu-top {
+    padding: 0em 0 0em;
+  }
+  .menu {
+    padding: 3em 0;
+  }
+  .btm-right:hover .captn h4 {
+    margin-top: 45px;
+  }
+  .head {
+    min-height: 74px;
+    padding-top: 0.5em;
+  }
+  .logo h1 {
+    font-size: 3.5em;
+  }
+  .content-left h3,
+  .services-left h3,
+  .menu-left h3,
+  .events-left h3 {
+    font-size: 2.5em;
+  }
+  .content-left span,
+  .services-left span,
+  .menu-left span,
+  .events-left span {
+    font-size: 1.7em;
+  }
+}
+@media (max-width: 600px) {
+  .banner h4 {
+    font-size: 1.8em;
+    width: 87%;
+    padding: 0.5em;
+  }
+  .logo h1 {
+    font-size: 3em;
+  }
+  .nav-icon {
+    margin-top: 1.2em;
+  }
+  .down img {
+    width: 10%;
+  }
+  .header {
+    min-height: 400px;
+  }
+
+  .menu-bottom1 {
+    width: 85%;
+    float: none;
+    padding: 0 0px 1em;
+    margin: 0 auto;
+  }
+  .captn:before {
+    top: -10%;
+    left: 42%;
+  }
+  .btm-right .captn {
+    bottom: -80%;
+  }
+  .captn h4 {
+    font-size: 1.6em;
+  }
+  .captn p {
+    margin-bottom: 0.2em;
+    font-size: 1em;
+  }
+  .btm-right:hover .captn h4 {
+    margin-top: 80px;
+  }
+
+  .menu {
+    padding: 2.5em 0;
+  }
+  .events {
+    padding: 2.5em 0;
+  }
+  .head {
+    min-height: 64px;
+  }
+  .contact {
+    padding: 3em 0;
+  }
+}
+@media (max-width: 414px) {
+  .logo h1 {
+    font-size: 2.3em;
+  }
+  .logo a img {
+    width: 15%;
+  }
+  .nav-icon {
+    margin-top: 0.6em;
+  }
+  .banner h4 {
+    font-size: 1.2em;
+    width: 85%;
+    padding: 0.5em 0.3em;
+  }
+  .down {
+    margin-top: 2em;
+  }
+  .banner {
+    margin-top: 2em;
+  }
+  .banner p {
+    font-size: 1.1em;
+  }
+  .banner label {
+    margin: 1em 0;
+  }
+  .banner {
+    margin-top: 2em;
+  }
+  .header {
+    min-height: 258px;
+    padding-top: 0.5em;
+  }
+
+  .captn:before {
+    top: -9%;
+  }
+  .captn h4 {
+    font-size: 1.8em;
+  }
+  .menu-right p {
+    margin: 0.2em 0;
+    line-height: 1.8em;
+    font-size: 1em;
+  }
+
+  ul.in li a {
+    font-size: 1.3em;
+    padding: 0px 0.5em 0 0;
+  }
+
+  .menu {
+    padding: 2em 0 1em;
+  }
+  .menu-left,
+  .menu-right {
+    padding: 0;
+  }
+  .menu-bottom1 {
+    width: 100%;
+  }
+
+  .btm-right:hover .captn h4 {
+    margin-top: 85px;
+  }
+
+  .menu-left {
+    padding: 0;
+  }
+  .menu-right {
+    padding: 0;
+  }
+
+  .col-md-9 {
+    padding: 0;
+  }
+
+  span.label {
+    margin: 0 0 0.5em;
+    display: inline-block;
+  }
+}
+@media (max-width: 320px) {
+  .captn h4 {
+    font-size: 1.4em;
+  }
+  .btm-right:hover .captn h4 {
+    margin-top: 50px;
+  }
+}

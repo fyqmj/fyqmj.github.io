@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Home</title>
+	<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="js/jquery.min.js"></script>
+	<!-- Custom Theme files -->
+	<!--theme-style-->
+	<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+	<!--//theme-style-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="" />
+
+</head>
+
+<body>
+	<div class="header">
+		<div class="container">
+			<div class="logo animated wow pulse" data-wow-duration="1000ms" data-wow-delay="500ms">
+				<h1>
+					<a href="index.html">
+						<span>煮玉米</span>
+				</h1>
+			</div>
+			<div class="nav-icon">
+				<a href="#" class="navicon"></a>
+				<div class="toggle">
+					<ul class="toggle-menu">
+						<li>
+							<a class="active" href="index.html">首页</a>
+						</li>
+						<li>
+							<a href="#">游戏说明</a>
+						</li>
+						<li>
+							<a href="#" target="_blank">智能合约</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		<!-- start search-->
+		<div class="banner">
+			<p class="animated wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="500ms">美味生活 美味人生</p>
+			<label></label>
+			<h4 class="animated wow fadeInTop" data-wow-duration="1000ms" data-wow-delay="500ms">锅中：
+				<span class="text-danger"> 0 Nas</span>
+				<br/>当前厨师：
+				<br/>还需等待 8:35 可完成玉米烹饪。</h4>
+			<a class="scroll down" href="index.html">
+				<img src="images/cook.png" alt=""><br/>前往烹饪
+			</a>
+		</div>
+	</div>
+	<!--content-->
+	<div class="menu">
+		<div class="container">
+			<div class="menu-top">
+				<div class="col-md-4 menu-left animated wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="500ms">
+					<h3>煮玉米</h3>
+					<label>
+						<i class="glyphicon glyphicon-menu-up"></i>
+					</label>
+					<span>游戏说明</span>
+				</div>
+				<div class="col-md-8 menu-right animated wow fadeInRight" data-wow-duration="1000ms" data-wow-delay="500ms">
+					<p>
+						玉米，是中国老百姓千百年来的主要食物。“煮玉米”这个游戏是通过烹饪玉米进行的游戏，最后烹饪成功获得玉米的人赢得游戏。
+						<br/> 1、煮一锅玉米共需要8:35个小时。煮玉米可选择多个炊具（每个炊具耗费的烹饪时间不同），当购买了某个炊具后，该炊具的价格会增长0.0005。
+						<br/> 2、一锅玉米同时只能使用一种炊具工具进行烹饪。
+						<br/> 3、你购买的炊具后，您花费的费用 74% 转到该炊具前所有者（若您是第一位所有者，这部分的费用还是属于您），24%进锅成了香料,2%成为开发费用。
+						<br/> 4、当在您手中的烹饪炊具中成功完成了烹饪玉米，那么您就赢了！整锅玉米都属于您，当然包括其中的香料！
+					</p>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+
+	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+	<!---->
+
+	<link rel="stylesheet" type="text/css" href="css/component.css" />
+	<!-- animation-effect -->
+	<link href="css/animate.min.css" rel="stylesheet">
+	<script src="js/wow.min.js"></script>
+	<script>
+		new WOW().init();
+	</script>
+	<!-- //animation-effect -->
+
+	<script>
+		$('.navicon').on('click', function (e) {
+			e.preventDefault();
+			$(this).toggleClass('navicon--active');
+			$('.toggle').toggleClass('toggle--active');
+		});
+	</script>
+
+</body>
+
+</html>
