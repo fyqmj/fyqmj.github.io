@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>煮玉米</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="" />
+	<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+</head>
+
+<body>
+	<div class="header">
+		<div class="container">
+			<div class="logo animated wow pulse">
+				<h1>
+					<a href="index.html">
+						<span>煮玉米</span>
+				</h1>
+			</div>
+			<div class="nav-icon">
+				<a href="#" class="navicon"></a>
+				<div class="toggle">
+					<ul class="toggle-menu">
+						<li>
+							<a class="active" href="index.html">首页</a>
+						</li>
+						<li>
+							<a href="about.html">游戏说明</a>
+						</li>
+						<li>
+							<a href="#" target="_blank">智能合约</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		<!-- start search-->
+		<div class="banner">
+			<p class="animated wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="500ms">美味生活 美味人生</p>
+			<label></label>
+			<h4 class="animated wow fadeInTop" data-wow-duration="1000ms" data-wow-delay="500ms">锅中：
+				<span class="text-danger" id="nastext"> 0 Nas</span>
+				<br/><span style="font-size: 16px;" id="hotpotatoholder"></span>
+                <br/><span id="timerInfo" style="font-size: 16px;">还需等待 <span id="timer"></span> 可完成玉米烹饪。</span>
+                <span style="font-size: 16px;" id="lblGameEndMessage">本轮游戏已结束。开启新游戏，奖励将发放给当前的厨师。</span>
+                <button type="button" class="btn btn-danger" id="btnStartGame">开启新游戏</button>
+                <span style="font-size: 16px;" id="txtGameStartTime"></span>
+            </h4>
+
+			<a class="scroll down" href="#content-down">
+				<img src="images/cook.png" alt=""><br/>立即烹饪
+			</a>
+		</div>
+	</div>
+	<!--content-->
+	<div class="menu" id="content-down">
+		<div class="container">
+			<div class="menu-top">
+				<div class="col-md-4 menu-left animated wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="500ms">
+					<h3>煮玉米</h3>
+					<label>
+						<i class="glyphicon glyphicon-menu-up"></i>
+					</label>
+					<span>游戏说明</span>
+				</div>
+				<div class="col-md-8 menu-right animated wow fadeInRight" data-wow-duration="1000ms" data-wow-delay="500ms">
+					<p>
+						玉米，是中国老百姓千百年来的主要食物。“煮玉米”这个游戏是化身厨师通过烹饪玉米进行的游戏，最后烹饪成功获得玉米的人赢得游戏。
+						<br/> 1、煮一锅玉米共需要8:35个小时。煮玉米可选择多个炊具（每个炊具耗费的烹饪时间不同），当购买了某个炊具后，该炊具的价格会增长0.0005。
+						<br/> 2、一锅玉米同时只能使用一种炊具工具进行烹饪。
+						<br/> 3、你购买的炊具后，您花费的费用 74% 转到该炊具前所有者（若您是第一位所有者，这部分的费用还是属于您），24%进锅成了香料,2%成为开发费用。
+						<br/> 4、当在您手中的烹饪炊具中成功完成了烹饪玉米，那么您就赢了！整锅玉米都属于您，当然包括其中的香料！
+					</p>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+			<div class="menu-bottom animated wow fadeInRight" data-wow-duration="1000ms" data-wow-delay="500ms">
+				<div class="col-md-4 menu-bottom1">
+					<div class="btm-right">
+
+						<form>
+							<img src="images/me1.jpg" alt="" class="img-responsive">
+							<div class="captn">
+								<h4>锅</h4>
+								<p>烹饪时间：30分</p>
+                                <p>拥有者：<span class="owner"></span></p>
+								<p>价格：- Nas</p>
+								<p>
+									<input type="text" class="form-control price" value="0.001">
+								</p>
+								<button type="button" class="btn btn-danger">购 买</button>
+							</div>
+						</form>
+
+					</div>
+				</div>
+				<div class="col-md-4 menu-bottom1">
+					<div class="btm-right">
+						<form>
+							<img src="images/me2.jpg" alt="" class="img-responsive">
+							<div class="captn">
+								<h4>水</h4>
+								<p>烹饪时间：35分</p>
+                                <p>拥有者：<span class="owner"></span></p>
+								<p>价格：- Nas</p>
+								<p>
+									<input type="text" class="form-control price" value="0.001">
+								</p>
+								<button type="button" class="btn btn-danger">购 买</button>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="col-md-4 menu-bottom1">
+					<div class="btm-right">
+						<form>
+							<img src="images/me3.jpg" alt="" class="img-responsive">
+							<div class="captn">
+								<h4>盐</h4>
+								<p>烹饪时间：40分</p>
+                                <p>拥有者：<span class="owner"></span></p>
+								<p>价格：- Nas</p>
+								<p>
+									<input type="text" class="form-control price" value="0.001">
+								</p>
+								<button type="button" class="btn btn-danger">购 买</button>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+			<div class="menu-bottom animated wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="500ms">
+				<div class="col-md-4 menu-bottom1">
+					<div class="btm-right">
+						<form>
+							<img src="images/me4.jpg" alt="" class="img-responsive">
+							<div class="captn">
+								<h4>筷子</h4>
+								<p>烹饪时间：45分</p>
+                                <p>拥有者：<span class="owner"></span></p>
+								<p>
+									<input type="text" class="form-control" value="0.001">
+								</p>
+								<button type="button" class="btn btn-danger">购 买</button>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="col-md-4 menu-bottom1">
+					<div class="btm-right">
+						<form>
+							<img src="images/me5.jpg" alt="" class="img-responsive">
+							<div class="captn">
+								<h4>刀</h4>
+								<p>烹饪时间：50分</p>
+                                <p>拥有者：<span class="owner"></span></p>
+								<p>
+									<input type="text" class="form-control price" value="0.001">
+								</p>
+								<button type="button" class="btn btn-danger">购 买</button>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="col-md-4 menu-bottom1">
+					<div class="btm-right">
+						<form>
+							<img src="images/me6.jpg" alt="" class="img-responsive">
+							<div class="captn">
+								<h4>指尖陀螺</h4>
+								<p>烹饪时间：55分</p>
+								<p>拥有者：<span class="owner"></span></p>
+								<p>价格：- Nas</p>
+								<p>
+									<input type="text" class="form-control price" value="0.001">
+								</p>
+								<button type="button" class="btn btn-danger">购 买</button>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="js/jquery.min.js"></script>
+	<!-- Custom Theme files -->
+
+	<!-- start-smoth-scrolling -->
+	<script type="text/javascript" src="js/move-top.js"></script>
+	<script type="text/javascript" src="js/easing.js"></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function ($) {
+			$(".scroll").click(function (event) {
+				event.preventDefault();
+				$('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+			});
+		});
+	</script>
+	<!-- start-smoth-scrolling -->
+	<link rel="stylesheet" type="text/css" href="css/component.css" />
+	<!-- animation-effect -->
+	<link href="css/animate.min.css" rel="stylesheet">
+	<script src="js/wow.min.js"></script>
+	<script>
+		new WOW().init();
+	</script>
+	<!-- //animation-effect -->
+
+	<script>
+		$('.navicon').on('click', function (e) {
+			e.preventDefault();
+			$(this).toggleClass('navicon--active');
+			$('.toggle').toggleClass('toggle--active');
+		});
+	</script>
+	
+	<script src="./js/nebPay.js"></script>
+	<script src="./js/nebulas.js"></script>
+	
+	<script>
+        var $forms=null;
+function main(){
+    buildCookware();
+    controlLoop()
+}
+
+function controlLoop(){
+    refreshData()
+    setTimeout(controlLoop,60000)
+}
+//游戏结束，页面对象处理
+function gameEndPageShow(){
+    $("#timerInfo").hide();
+
+    $("#lblGameEndMessage").show();
+    $("#btnStartGame").show();
+    $forms.each(function(i,item){
+        $(item).find("button").hide();
+    });
+}
+//游戏运行中，页面显示
+function gameRunPageShow(){
+
+    $("#lblGameEndMessage").hide();
+    $("#btnStartGame").hide();
+    $forms.each(function(i,item){
+        $(item).find("button").show();
+    });
+}
+//刷新数据
+function refreshData(){
+    console.log('refresh')
+    //获取当前厨师，和剩余做饭时间
+    getGameInfo(function(gameInfo){
+        var $holderdoc=$("#hotpotatoholder");
+        var $timerbox=$("#timerInfo");
+        var $gameStartTime=$("#txtGameStartTime")
+        //判断锅的所有者是否存在
+        if(gameInfo.hotPropHolder!=""){
+            //存在所有者
+            //$timerbox.style.display='block'
+            $timerbox.show();
+            $gameStartTime.hide();
+            $holderdoc.text("当前厨师："+gameInfo.hotPropHolder);
+            $("#nastext").text(weiToDisplay(gameInfo.sedimentaryBalance)+" NAS");
+            getTimeLeft(function(timeleft){
+                //判断游戏是否结束
+                if(timeleft>0){
+                    //玉米还没有煮熟，显示剩余时间
+                    $("#timer").text(formatSeconds(timeleft));
+                    gameRunPageShow();
+                }else{
+                    //玉米已煮熟。显示开启下一局游戏按钮
+                    gameEndPageShow();
+                }
+
+            });
+        }
+        else{
+            //不存在所有者
+            $holderdoc.text("游戏还没有第一厨师，立即烹饪，选择道具，成为第一个厨师吧！");
+            $timerbox.hide();
+        }
+    });
+    getTimeLeftToContestStart(function(timeleft){
+        if(timeleft>0){
+            $("#txtGameStartTime").show();
+            $("#txtGameStartTime").text("请等待："+formatSeconds(timeleft)+"后开启游戏！");
+        }
+    });
+
+    $forms.each(function(i,item){
+        setInfo(i)
+    });
+}
+function setInfo(index){
+    //设置单一道具信息
+    var $tempForm=$($forms[index]);
+    getProp(index,
+        function(owner,price){
+            if(owner==""){
+                owner="暂无";
+            }
+            $tempForm.find(".price").val(weiToDisplay(price));
+            $tempForm.find(".owner").text(owner);
+        });
+}
+function formatSeconds(seconds){
+    var date = new Date(null);
+    date.setSeconds(seconds); // specify value for SECONDS here
+    return date.toISOString().substr(11, 8);
+}
+function secondsToString(seconds)
+{
+    var numdays = Math.floor(seconds / 86400);
+
+    var numhours = Math.floor((seconds % 86400) / 3600);
+
+    var numminutes = Math.floor(((seconds % 86400) % 3600) / 60);
+
+    var numseconds = ((seconds % 86400) % 3600) % 60;
+    var endstr=""
+    //if(numdays>0){
+    //    endstr+=numdays + " days "
+    //}
+    
+    return numdays + "d " + numhours + "h " + numminutes + "m " + numseconds + "s";
+}
+
+//绑定道具,为道具绑定事件
+function buildCookware(){
+    $forms=$(".container form");
+    $forms.each(function(index,item){
+        //console.log($(item).find("button"));
+        //购买按钮事件处理
+        $(item).find("button").click(function(){
+                getProp(index,
+                    function(owner,price){
+                        buyProp(index,neb.fromBasic(price,"nas"),
+                            function(){
+                                displayTransactionMessage();
+                            })
+                    })
+        });
+        console.log(index);
+    });
+
+    var btnStartGame=$('#btnStartGame')
+    btnStartGame.click(function(){
+        buyProp(50,0,
+            function(){
+                displayTransactionMessage();
+        })
+    });
+    btnStartGame.onclick=function(){
+        buyPotato(100,0,
+                function(){
+                    displayTransactionMessage();
+                },400000)
+    };
+
+    $("#lblGameEndMessage").hide();
+    $("#btnStartGame").hide();
+}
+
+
+
+//显示转账信息
+function displayTransactionMessage(){
+    console.log("显示转账信息等待中！");
+    //displayModalMessage("Transaction Submitted")
+}
+
+function weiToDisplay(nasprice){
+    return formatNasValue(neb.fromBasic(nasprice,"nas"))
+}
+function formatNasValue(nasstr){
+    return parseFloat(parseFloat(nasstr).toFixed(5));
+}
+
+
+
+
+
+    "use strict";
+
+var dappAddress = "n1rdHHuU4GntJHPC7ucNv2f49EsQWryoaMv";
+
+var nebulas = require("nebulas"),
+    Account = nebulas.Account,
+    neb = new nebulas.Neb();
+//neb.setRequest(new nebulas.HttpRequest("http://192.168.1.123:8685"));
+neb.setRequest(new nebulas.HttpRequest("https://testnet.nebulas.io"));
+var NebPay = require("nebpay");     //https://github.com/nebulasio/nebPay
+var nebPay = new NebPay();
+var serialNumber
+
+
+function getInfo(callFunction,callArgs,callback){
+    var from = Account.NewAccount().getAddressString();
+
+    var value = "0";
+    var nonce = "0"
+    var gas_price = "1000000"
+    var gas_limit = "2000000"
+    var contract = {
+        "function": callFunction,
+        "args": callArgs
+    }
+
+    neb.api.call(from,dappAddress,value,nonce,gas_price,gas_limit,contract).then(function (resp) {
+        callback(resp);
+    }).catch(function (err) {
+        console.log("error:" + err.message)
+    })
+
+}
+
+function getProp(id,callback){
+    getInfo("getProp","[\""+id+"\"]",function (resp) {
+            //console.log(resp);
+            var result = JSON.parse(resp.result)
+            callback(result.owner,result.price)
+            //callback(resp.result);
+        })
+}
+function getTimeLeft(callback){
+    getInfo("timeLeftToCook","[\"\"]",function (resp) {
+            console.log(resp);
+            callback(resp.result);
+        })
+}
+function getTimeLeftToContestStart(callback){
+        getInfo("timeLeftToContestStart","[\"\"]",function (resp) {
+            console.log(resp);
+            callback(resp.result);
+        })
+}
+function getGameInfo(callback){
+    getInfo("getGameInfo","[\"\"]",function (resp) {
+        var result = JSON.parse(resp.result)
+            callback(result);
+        })
+}
+function getLastPot(callback){
+        getInfo("lastPot","[\"\"]",function (resp) {
+            callback(resp.result);
+        })
+}
+//付款买道具
+function buyProp(id,nas,callback,gastouse=200000){
+
+
+        var to = dappAddress;
+        var value = nas;
+        var callFunction = "buyProp"
+        var callArgs = "["+id+"]"
+
+        serialNumber = nebPay.call(to, value, callFunction, callArgs, {    //使用nebpay的call接口去调用合约,
+            listener: cbPush        //设置listener, 处理交易返回信息
+        });
+}
+
+    function cbPush(resp) {
+        //刷新数据
+        refreshData();
+        //console.log("response1111 of push: " + JSON.stringify(resp))
+    }
+
+main()
+</script>
+
+</body>
+
+</html>
