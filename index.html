@@ -287,17 +287,27 @@ function refreshData(){
         else{
             //不存在所有者
             $holderdoc.text("游戏还没有第一厨师，立即烹饪，选择道具，成为第一个厨师吧！");
-            $timerbox.hide();
+			$timerbox.hide();
+			//获取休息时间
+			getTimeLeftToContestStart(function(timeleft){
+				if(timeleft>0){
+					$("#txtGameStartTime").show();
+					$("#lblGameEndMessage").hide();
+					$("#btnStartGame").hide();
+					$forms.each(function(i,item){
+						$(item).find("button").hide();
+					});
+					$("#txtGameStartTime").text("请等待："+formatSeconds(timeleft)+"后开启游戏！");
+				}else{
+					$forms.each(function(i,item){
+						$(item).find("button").show();
+					});
+					$("#txtGameStartTime").hide();
+				}
+			});
         }
     });
-    getTimeLeftToContestStart(function(timeleft){
-        if(timeleft>0){
-            $("#txtGameStartTime").show();
-			$("#lblGameEndMessage").hide();
-    		$("#btnStartGame").hide();
-            $("#txtGameStartTime").text("请等待："+formatSeconds(timeleft)+"后开启游戏！");
-        }
-    });
+
 
     $forms.each(function(i,item){
         setInfo(i)
@@ -378,13 +388,14 @@ function formatNasValue(nasstr){
 
     "use strict";
 
-var dappAddress = "n1rdHHuU4GntJHPC7ucNv2f49EsQWryoaMv";
+var dappAddress = "n1uBw71gH71yDMfMDssjT4ppMRj9JvDtMwC";
 
 var nebulas = require("nebulas"),
     Account = nebulas.Account,
     neb = new nebulas.Neb();
 //neb.setRequest(new nebulas.HttpRequest("http://192.168.1.123:8685"));
-neb.setRequest(new nebulas.HttpRequest("https://testnet.nebulas.io"));
+//neb.setRequest(new nebulas.HttpRequest("https://testnet.nebulas.io"));
+neb.setRequest(new nebulas.HttpRequest("https://mainnet.nebulas.io/"));
 var NebPay = require("nebpay");     //https://github.com/nebulasio/nebPay
 var nebPay = new NebPay();
 var serialNumber
