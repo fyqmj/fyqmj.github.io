@@ -71,9 +71,9 @@
 				<div class="col-md-8 menu-right animated wow fadeInRight" data-wow-duration="1000ms" data-wow-delay="500ms">
 					<p>
 						玉米，是中国老百姓千百年来的主要食物。“煮玉米”这个游戏是化身厨师通过烹饪玉米进行的游戏，最后烹饪成功获得玉米的人赢得游戏。
-						<br/> 1、煮一锅玉米共需要8:35个小时。煮玉米可选择多个炊具（每个炊具耗费的烹饪时间不同），当购买了某个炊具后，该炊具的价格会增长0.0005。
-						<br/> 2、一锅玉米同时只能使用一种炊具工具进行烹饪。
-						<br/> 3、你购买的炊具后，您花费的费用 74% 转到该炊具前所有者（若您是第一位所有者，这部分的费用还是属于您），24%进锅成了香料,2%成为开发费用。
+						<br/> 1、煮玉米可选择多个炊具（每个炊具耗费的烹饪时间不同），当购买了某个炊具后，该炊具的价格会增长97%，你成为炊具的所有者，煮熟玉米的时间即为你购买的炊具的时间。
+						<br/> 2、一锅玉米同时只能使用一种炊具工具进行烹饪，在玉米煮熟前，其它人可购买炊具，获取这个锅的厨师身份。煮熟玉米的时间变更为新炊具的时间。
+						<br/> 3、你购买的炊具后，您花费的费用 74% 转到该炊具前所有者（若您是第一位所有者，这部分的费用成为香料），24%进锅成了香料,2%成为开发费用。
 						<br/> 4、当在您手中的烹饪炊具中成功完成了烹饪玉米，那么您就赢了！整锅玉米都属于您，当然包括其中的香料！
 					</p>
 				</div>
@@ -234,7 +234,7 @@ function main(){
 
 function controlLoop(){
     refreshData()
-    setTimeout(controlLoop,60000)
+    setTimeout(controlLoop,10000)
 }
 //游戏结束，页面对象处理
 function gameEndPageShow(){
@@ -293,6 +293,8 @@ function refreshData(){
     getTimeLeftToContestStart(function(timeleft){
         if(timeleft>0){
             $("#txtGameStartTime").show();
+			$("#lblGameEndMessage").hide();
+    		$("#btnStartGame").hide();
             $("#txtGameStartTime").text("请等待："+formatSeconds(timeleft)+"后开启游戏！");
         }
     });
@@ -317,22 +319,6 @@ function formatSeconds(seconds){
     var date = new Date(null);
     date.setSeconds(seconds); // specify value for SECONDS here
     return date.toISOString().substr(11, 8);
-}
-function secondsToString(seconds)
-{
-    var numdays = Math.floor(seconds / 86400);
-
-    var numhours = Math.floor((seconds % 86400) / 3600);
-
-    var numminutes = Math.floor(((seconds % 86400) % 3600) / 60);
-
-    var numseconds = ((seconds % 86400) % 3600) % 60;
-    var endstr=""
-    //if(numdays>0){
-    //    endstr+=numdays + " days "
-    //}
-    
-    return numdays + "d " + numhours + "h " + numminutes + "m " + numseconds + "s";
 }
 
 //绑定道具,为道具绑定事件

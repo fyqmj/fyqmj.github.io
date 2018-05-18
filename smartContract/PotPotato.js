@@ -185,13 +185,13 @@ CoinPot.prototype = {
             var sellingPrice=tempProp.price;
             //付款与价格之间的差值
             var purchaseExcess = safeMath.sub(value, sellingPrice);
-            //道具价格的 76%，用于支付给道具所有人
-            var payment =new BigNumber(safeMath.div(safeMath.mul(sellingPrice, 76), 100));
-            //道具价格的 4% 用于支付给开发人员
-            var devFee=new BigNumber(safeMath.div(safeMath.mul(sellingPrice, 4), 100));
+            //道具价格的 74%，用于支付给道具所有人
+            var payment =new BigNumber(safeMath.div(safeMath.mul(sellingPrice, 74), 100));
+            //道具价格的 2% 用于支付给开发人员
+            var devFee=new BigNumber(safeMath.div(safeMath.mul(sellingPrice, 2), 100));
 
-            //道具价格的 20% 用于沉积在奖池
-            var devFee1=new BigNumber(safeMath.div(safeMath.mul(sellingPrice, 20), 100));
+            //道具价格的 24% 用于沉积在奖池
+            var devFee1=new BigNumber(safeMath.div(safeMath.mul(sellingPrice, 24), 100));
             
             
             this.sedimentaryBalance =devFee1.plus(new BigNumber(this.sedimentaryBalance));
